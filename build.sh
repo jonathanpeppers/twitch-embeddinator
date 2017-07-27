@@ -16,3 +16,6 @@ rm -Rf bin/
 cd Embeddinator-4000
 mono build/lib/Release/MonoEmbeddinator4000.exe -gen=Java -platform=Android -c -o ../bin ../Xamarin.Forms/Weather/WeatherApp/WeatherApp.Droid/bin/Release/WeatherApp.Droid.dll
 cd ..
+
+# Copy AAR
+cp bin/WeatherApp.Droid.aar AndroidStudio/WeatherApp.Droid/WeatherApp.Droid.aar
