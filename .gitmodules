@@ -1,0 +1,6 @@
+[submodule "Embeddinator-4000"]
+	path = Embeddinator-4000
+	url = https://github.com/jonathanpeppers/Embeddinator-4000.git
+[submodule "Xamarin.Forms"]
+	path = Xamarin.Forms
+	url = https://github.com/jonathanpeppers/build2017-new-in-xamarin-forms.git
