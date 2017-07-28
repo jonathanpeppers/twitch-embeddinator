@@ -1,9 +1,9 @@
 package com.xamarin.embedeverything;
 
-import android.os.Bundle;
 import android.app.*;
 import android.support.v4.app.FragmentActivity;
-import weatherapp_droid.MainFragment;
+import android.os.Bundle;
+import xamarin.MainFragment;
 
 public class MainActivity extends FragmentActivity {
 
@@ -26,8 +26,7 @@ public class MainActivity extends FragmentActivity {
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() != 0) {
             getFragmentManager().popBackStack();
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }

@@ -1,1 +1,1 @@
-include ':app', ':WeatherApp.Droid'
+include ':app', ':WeatherApp.Droid', ':formsviewgroup'
