@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-cd Embeddinator-4000
-./build.sh -t Generate-Android
-cd ..
+# Install E4K from NuGet
+mono .nuget/nuget.exe install Embeddinator-4000 -Version 0.1.0 -OutputDirectory packages
 
 # Restore NuGet & build Xamarin app
 rm -Rf Xamarin.Forms/Weather/WeatherApp/WeatherApp.Droid/bin/Debug/
@@ -11,9 +10,9 @@ msbuild Xamarin.Forms/Weather/WeatherApp/WeatherApp.Droid/WeatherApp.Droid.cspro
 
 # Run E4K
 rm -Rf bin/
-cd Embeddinator-4000
-mono build/lib/Release/MonoEmbeddinator4000.exe -gen=Java -platform=Android -c -o ../bin ../Xamarin.Forms/Weather/WeatherApp/WeatherApp.Droid/bin/Debug/WeatherApp.Droid.dll
-cd ..
+cd packages/Embeddinator-4000.0.1
+mono tools/MonoEmbeddinator4000.exe -gen=Java -platform=Android -c -o ../../bin ../../Xamarin.Forms/Weather/WeatherApp/WeatherApp.Droid/bin/Debug/WeatherApp.Droid.dll
+cd ../..
 
 # Copy AAR
 cp bin/WeatherApp.Droid.aar AndroidStudio/WeatherApp.Droid/WeatherApp.Droid.aar
